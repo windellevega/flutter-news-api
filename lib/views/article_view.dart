@@ -37,7 +37,9 @@ class _ArticleViewState extends State<ArticleView> {
           Opacity(
             opacity: 0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
               child: Icon(Icons.save),
             ),
           ),
