@@ -3,6 +3,7 @@ import 'package:flutter_news_api/helper/data.dart';
 import 'package:flutter_news_api/helper/news.dart';
 import 'package:flutter_news_api/models/article_model.dart';
 import 'package:flutter_news_api/models/category_model.dart';
+import 'package:flutter_news_api/views/article_list.dart';
 import 'package:flutter_news_api/views/category_tile.dart';
 import 'package:flutter_news_api/views/blog_tile.dart';
 
@@ -81,22 +82,8 @@ class _HomeState extends State<Home> {
                     ),
 
                     /// Blogs
-                    Container(
-                      padding: EdgeInsets.only(
-                        top: 16,
-                      ),
-                      child: ListView.builder(
-                          itemCount: articles.length,
-                          shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return BlogTile(
-                              imageUrl: articles[index].urlToImage,
-                              title: articles[index].title,
-                              desc: articles[index].description,
-                              url: articles[index].url,
-                            );
-                          }),
+                    ArticleList(
+                      articles: articles,
                     ),
                   ],
                 ),

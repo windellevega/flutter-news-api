@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news_api/helper/news.dart';
 import 'package:flutter_news_api/models/article_model.dart';
+import 'package:flutter_news_api/views/article_list.dart';
 import 'package:flutter_news_api/views/blog_tile.dart';
 
 class CategoryNews extends StatefulWidget {
@@ -72,22 +73,8 @@ class _CategoryNewsState extends State<CategoryNews> {
                 child: Column(
                   children: <Widget>[
                     /// Blogs
-                    Container(
-                      padding: EdgeInsets.only(
-                        top: 16,
-                      ),
-                      child: ListView.builder(
-                          itemCount: articles.length,
-                          shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return BlogTile(
-                              imageUrl: articles[index].urlToImage,
-                              title: articles[index].title,
-                              desc: articles[index].description,
-                              url: articles[index].url,
-                            );
-                          }),
+                    ArticleList(
+                      articles: articles,
                     ),
                   ],
                 ),
