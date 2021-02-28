@@ -4,8 +4,7 @@ import 'package:flutter_news_api/helper/news.dart';
 import 'package:flutter_news_api/models/article_model.dart';
 import 'package:flutter_news_api/models/category_model.dart';
 import 'package:flutter_news_api/views/article_list.dart';
-import 'package:flutter_news_api/views/category_tile.dart';
-import 'package:flutter_news_api/views/blog_tile.dart';
+import 'package:flutter_news_api/views/category_list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -67,18 +66,8 @@ class _HomeState extends State<Home> {
                 child: Column(
                   children: <Widget>[
                     /// Categories
-                    Container(
-                      height: 70,
-                      child: ListView.builder(
-                          itemCount: categories.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return CategoryTile(
-                              imageUrl: categories[index].imageUrl,
-                              categoryName: categories[index].categoryName,
-                            );
-                          }),
+                    CategoryList(
+                      categories: categories,
                     ),
 
                     /// Blogs
